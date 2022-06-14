@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Simple Lay Admin: Simply lay down and administrate - Simple Lay Admin</title>
+    <link rel="icon" type="image/x-icon" href="admin/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css?v=2.6.13">
+    <link rel="stylesheet" type="text/css" href="admin/css/index.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo layui-bg-custom">
+            <a href="javascript:;" lay-header-menu="menuAbout">
+                <img src="admin/icon.png" alt="Simple Lay Admin" title="About">
+            </a>
+        </div>
+
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item" lay-header-button="fullscreen" title="Fullscreen" lay-unselect>
+                <a href="javascript:;"><i class="layui-icon layui-icon-screen-full"></i></a>
+            </li>
+            <li class="layui-nav-item" lay-header-button="refresh" title="Refresh" lay-unselect>
+                <a href="javascript:;"><i class="layui-icon layui-icon-refresh"></i></a>
+            </li>
+        </ul>
+
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">User</a>
+                <dl class="layui-nav-child">
+                    <dd lay-unselect><a href="login.html">Logout</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-custom">
+        <div class="layui-side-scroll">
+            <ul class="layui-nav layui-nav-tree layui-bg-custom" lay-filter="layout-panel">
+                <li class="layui-nav-item layui-this">
+                    <a href="javascript:;" class="layui-href" data-href="//about:blank">
+                        <i class="layui-icon layui-icon-home"></i><cite>Home</cite>
+                    </a>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;"><i class="layui-icon layui-icon-console"></i><cite>Test</cite></a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" class="layui-href" data-href="test.html">Layui</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><i class="layui-icon layui-icon-chat"></i><cite>Feedback</cite></a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="https://github.com/op-amp/simple-lay-admin" target="_blank" rel="noopener noreferrer">English Version</a></dd>
+                        <dd><a href="https://gitee.com/gitiber/simple-lay-admin" target="_blank" rel="noopener noreferrer">Chinese Version</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <div class="layui-click-blocker"></div>
+        <div class="layui-tab layui-tab-brief" lay-allowclose="true" lay-filter="layout-tabs">
+            <ul class="layui-tab-title">
+                <li lay-id="//about:blank" class="layui-this" id="hometab">
+                    <i class="layui-icon layui-icon-home"></i>
+                </li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <iframe src="//about:blank" frameborder="0" class="layui-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="layui/layui.js?v=2.6.13"></script>
+<script src="admin/js/index.js"></script>
+<script>
+    timeout('login.html', 60, 3600);
+
+    layui.use(function () {
+        var layer = layui.layer,
+        util = layui.util,
+        $ = layui.$;
+
+        $(document).ready(function () {
+            var isGuest = false;
+            if (isGuest) {
+                $(".layui-click-blocker").css("display", "block");
+            }
+        });
+
+        util.event('lay-header-menu', {
+            menuAbout: function () {
+                layer.open({
+                    type: 1,
+                    title: 'Simple Lay Admin',
+                    closeBtn: 1,
+                    content: `<div style="padding: 15px;">
+                        <p>A simple web admin application template based on Layui web UI component library,
+                            featuring side navigation panel and iframe tabs.</p><br>
+                        <p>Currently as simple as only the login and index pages.
+                            The rest lies on your creativity.</p><br></div>`,
+                    area: '400px',
+                    offset: 'auto',
+                    move: false,
+                    anim: 5,
+                    shadeClose: true
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

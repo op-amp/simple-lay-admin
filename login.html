@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Login - Simple Lay Admin</title>
+    <link rel="icon" type="image/x-icon" href="admin/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css?v=2.6.13">
+    <link rel="stylesheet" type="text/css" href="admin/css/login.css">
+</head>
+<body class="layui-fluid">
+<div>
+    <div class="layui-header layui-container layui-anim layui-anim-fadein">
+        <img src="admin/logo.png" alt="Simple Lay Admin: Simply lay down and administrate">
+    </div>
+
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>Layui Styled Admin Template</legend>
+    </fieldset>
+
+    <form class="layui-form layui-container layui-anim layui-anim-fadein" action="" lay-filter="login">
+        <div class="layui-form-item">
+            <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
+            <div class="layui-input-block">
+                <input type="text" name="account" autocomplete="off" placeholder="Account" class="layui-input" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+            <div class="layui-input-block">
+                <input type="password" name="pwd" autocomplete="off" placeholder="Password" class="layui-input" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="submit" id="login-btn" class="layui-btn layui-btn-primary layui-border-green" lay-submit="" lay-filter="login-submit">Login</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="layui-footer">
+        <span class="foot">To login and proceed, please key in any account name with a password fully equals to it.</span>
+    </div>
+</div>
+
+<script src="layui/layui.js?v=2.6.13"></script>
+<script src="admin/js/login.js"></script>
+<script>
+    layui.use(function () {
+        var layer = layui.layer,
+        form = layui.form;
+
+        form.on('submit(login-submit)', function (data) {
+            if (data.field.account == data.field.pwd) {
+                layer.msg("登录成功", {icon: 1});
+                setTimeout(function () {
+                    top.location.assign('index.html');
+                }, 1000);
+            } else {
+                layer.msg("登录失败", {icon: 2});
+            }
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

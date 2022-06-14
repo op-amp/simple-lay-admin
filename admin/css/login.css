@@ -1,0 +1,60 @@
+html {
+    height: 100%;
+}
+body {
+    width: 80%;
+    min-height: 100%;
+}
+.layui-field-title {
+    margin-bottom: 50px;
+    text-align: center;
+    text-shadow: 2px 2px 5px #ccc;
+}
+.layui-field-title legend {
+    margin-left: 0;
+    letter-spacing: 2px;
+    font-size: 32px;
+}
+.layui-form {
+    width: 20%;
+    padding-bottom: 120px;
+}
+.layui-form-label {
+    width: min-content;
+    position: absolute;
+    z-index: 1;
+}
+.layui-input-block {
+    margin-left: 0;
+}
+.layui-input-block .layui-input {
+    padding-left: 46px;
+    border-radius: 10px;
+}
+.layui-input-block .layui-input:hover {
+    background-color: rgb(238, 238, 238, 0.25);
+}
+.layui-input-block .layui-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+}
+.layui-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    z-index: -1;
+    color: #666;
+    text-align: center;
+}
+.layui-header {
+    width: 100%;
+    height: 200px;
+}
+.layui-header img {
+    object-fit: contain;
+    width: inherit;
+    height: inherit;
+}

@@ -1,0 +1,70 @@
+.layui-logo img {
+    object-fit: contain;
+    width: 150px;
+    height: auto;
+}
+.layui-bg-custom {
+    background-color: #23262e;
+}
+.layui-layout-admin .layui-header {
+    background-color: #fff;
+}
+.layui-header .layui-nav-item a {
+    color: #333;
+}
+.layui-header .layui-nav-item a:hover {
+    color: #666;
+}
+.layui-layout-left {
+    padding-left: 10px;
+}
+.layui-layout-left .layui-nav-item {
+    margin: 0 5px;
+}
+.layui-layout-left .layui-nav-item a {
+    padding: 0 5px;
+}
+.layui-layout-left .layui-nav-item i {
+    font-size: 16px;
+}
+.layui-side .layui-nav-item cite {
+    margin-left: 10px;
+}
+.layui-layout-admin .layui-body {
+    background-color: #f6f6f6;
+    padding-bottom: 0;
+    border-top-style: solid;
+    border-width: 1px;
+    border-color: #f6f6f6;
+}
+.layui-body > .layui-tab {
+    margin: 0;
+}
+.layui-body > .layui-tab > .layui-tab-title {
+    background-color: #fff;
+    padding: 0 10px;
+}
+.layui-body > .layui-tab > .layui-tab-content {
+    padding: 0;
+}
+.layui-click-blocker {
+    background-color: #666;
+    opacity: 60%;
+    width: 100%;
+    height: calc(100% - 41px);
+    position: absolute;
+    top: 41px;
+    z-index: 10;
+    display: none;
+}
+.layui-iframe {
+    width: 100%;
+    height: calc(100% - 41px);
+    position: absolute;
+}
+#hometab {
+    min-width: 26px;
+}
+#hometab .layui-icon-close {
+    display: none;
+}
