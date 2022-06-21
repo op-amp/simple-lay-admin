@@ -14,6 +14,11 @@ function timeout(url, clock = 1, halt = 60) {
             currentTime = new Date().getTime();
             if (currentTime - lastTime > halt) {
                 top.location.assign(url);
+                document.body.addEventListener("focus", function () {
+                    top.location.reload();
+                }, {
+                    once: true
+                });
             }
         }, clock * 1000);
     });

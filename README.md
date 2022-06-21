@@ -16,6 +16,12 @@ Any HTML element in [`index.html`](index.html) with an `<a>` tag and a `layui-hr
 
 Notice that the value of the referential iframe source URL should be set through the `data-href` attribute instead of the usual `href` attribute.
 
+## Page Screenshots
+
+![](./Screenshots/login.png)
+
+![](./Screenshots/index.png)
+
 ## Project Repo
 
 - English version: [GitHub](https://github.com/op-amp/simple-lay-admin)
